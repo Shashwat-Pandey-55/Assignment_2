@@ -1,0 +1,89 @@
+This is my Assignment no 2.
+This project is based on a web application named Fasten which is an open-source, self-hosted, personal/family electronic medical record 
+aggregator, designed to integrate with 1000's of insurances/hospitals. 
+The website is pretty basic right now and which has certain solid functions - 
+1. It is basically a self-hosted web application.
+2. It has Dashboards & tracking for diagnostic tests.
+3. It supports the Medical industry's (semi-standard) FHIR protocol.
+
+There are 2 flavors of Fasten:
+1. ghcr.io/fastenhealth/fasten-onprem:sandbox - This version only allows you to connect to a handful of Healthcare providers,
+using Sandbox accounts that are meant for testing, and contain synthetic(fake) data to give you an idea what Fasten will look 
+like, without requiring personal medical information.
+
+2. ghcr.io/fastenhealth/fasten-onprem:main - This version allows you to connect to 650+ different Healthcare providers, using
+your existing accounts. It will allow you to connect and retrieve your personal electronic medical record and store it within
+Fasten. Be careful, this is YOUR health data
+So the tech stack used in frontend includes Nodejs, Yarn, Angular and for the backend go is used. Docker is also used in this project. 
+
+Firstly we need to make config.dev.yaml and copy the code written in the repository.
+While i was making file i was confused where to make this while, in frontend folder or in backend folder or i have to just make this
+file globally. Firstly i encountered the errors when i made this file in frontend folder. Through random searching and stackoverflow
+i got to know about this think that this file needs to be created globally so when i created this file globally no error occurred.
+
+ We can run Fasten in 2 modes: sandbox or production (prod). In sandbox mode, it can only communicate with test servers.
+ After running all the commands we can copy paste the link in a tab in google chrome and now we can see the user interface of 
+ Fasten. We can login with the given username and password and then we will be able to see the Dashboard of Fasten. We can see many
+ graphs and pie charts related to EMR's and different Insurance companies from where Fasten can fetch data for you. 
+ We will be able to see the healthcare companies associated with the medical data. These medical companies have API’s which fasten can
+ use it to fetch your medical history. 
+ 
+The Dockerfile is used to build a container image for a web application. The Dockerfile starts with a multi-stage build, where different
+stages are defined to build the frontend and backend separately. 
+Dockerfiles allow developers to define the exact dependencies and configurations required for their web application. 
+It ensures that the development and production environments are consistent, reducing the chances of "it works on my machine" issues.
+By using Docker, developers can package their application and its dependencies into a container, which can be run on any machine with 
+Docker installed. 
+When working with version control systems like Git, it's common practice to exclude certain directories from being tracked or committed 
+to the repository. This is done because these directories either contain project-specific files or generated files that can be easily
+recreated or fetched when needed. The code for this particular task is stored in .gitignore file in the repository.
+
+the code *.scss -linguist-detectable means that any file with the .scss extension should be excluded from being considered detectable
+or trackable by the Linguist library. This configuration might be useful when you want to exclude Sass files from being counted or analyzed
+as code files, especially if they are not intended to be directly executed or if you want to avoid unnecessary noise or false positives
+in code analysis tools or language statistics.
+The HTML document in the frontend folder sets up the basic structure and includes various external resources such as stylesheets, fonts,
+and scripts. It also dynamically determines the baseHref based on the current URL and uses it to set the base URL for relative paths.
+Finally, it includes a custom HTML element <app-root></app-root> which likely represents the root component of a web application built with
+a specific framework.
+The code in main.ts file sets up the entry point for an Angular application. It imports necessary functions and modules from Angular,
+initializes the application module, and determines whether to enable production mode based on the environment configuration. Finally, it
+dynamically bootstraps the Angular application in the browser.
+Code in test.ts sets up the testing environment for an Angular application. It initializes the testing environment with the appropriate
+modules, creates a context for loading test files, and then loads and executes the test modules. This allows the tests to be run and 
+evaluated using the Angular testing infrastructure.
+
+Fasten.go file in the backend folder imports necessary packages from the standard library and external dependencies. It also Defines
+the main function as the entry point of the program. It creates a configuration object and reads the configuration file.
+At last it Creates a logger object for logging purposes and Starts the web server by calling the Start method on the webServer object.
+It also Handles any errors that occur during the execution of the program.
+
+So the course which i did in assignment 1 on Linux shell scripting was a bit helpful in reading .sh files for example in git.version.sh
+file the shebang  at the beginning of the script specifies that it should be executed using the Bash interpreter.
+The script checks whether the environment variable CI is empty using the -z conditional expression. If CI is empty, it means the script is
+running locally (not in GitHub Actions). So in summary, this Bash script generates a version file based on whether it's running locally or
+in GitHub Actions. It uses Git commands or environmental variables to extract relevant information, and then writes the version information
+to a TypeScript file. 
+This is all which i was able to extract from the project assigned to me. Although i was not able to understand most of the code but i did 
+try my best to understand by google, stack overflow, chatgpt etc.
+Thank You!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
